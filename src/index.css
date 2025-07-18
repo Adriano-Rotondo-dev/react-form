@@ -29,6 +29,36 @@
   padding: 0 1rem;
 }
 
+.btn {
+  border-radius: 0.3rem;
+  color: white;
+  background-color: black;
+  transition: 0.1s ease;
+}
+
+.btn:hover {
+  color: crimson;
+  transform: scale(1.2);
+}
+
+.delete {
+  padding: 0.5rem 1rem;
+}
+.delete:active {
+  transform: scale(0.9);
+}
+
+.save {
+  transition: 0.2 ease;
+}
+
+.save:hover {
+  transform: scale(1.05);
+}
+.save:active {
+  transform: scale(1);
+}
+
 .container {
   flex-direction: column;
   justify-content: center;
@@ -46,6 +76,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid grey;
+  padding: 2rem;
 }
 
 .icon {

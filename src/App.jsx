@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import singles_list from "./data/articles";
 
 function App() {
@@ -21,12 +20,11 @@ function App() {
           return (
             <li key={index} className="single flex">
               {single}
-              <img className="icon" src="/img/sp_logo.ico" alt="sp_logo" />
               <button
                 className="delete btn"
                 onClick={() => handleDelete(index)}
               >
-                Delete
+                <i class="fa-solid fa-trash"></i>
               </button>
             </li>
           );
@@ -40,7 +38,7 @@ function App() {
           value={newSingle}
           onChange={(e) => setNewSingle(e.target.value)}
         />
-        <button type="submit" className="btn flex">
+        <button type="submit" className="save btn flex">
           Save the next Ritual
           <img className="icon" src="/img/sp_logo.ico" alt="sp_logo" />
         </button>
