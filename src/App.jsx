@@ -10,6 +10,11 @@ function App() {
     e.preventDefault();
     setSingles([newSingle, ...singles]);
   }
+  function handleEdit(e, index) {
+    const updatedSingles = [...singles];
+    updatedSingles[index] = e.target.innerText;
+    setSingles(updatedSingles);
+  }
   function handleDelete(singleToRemove) {
     setSingles(singles.filter((single, index) => index !== singleToRemove));
   }
@@ -20,12 +25,14 @@ function App() {
         {singles.map((single, index) => {
           return (
             <li key={index} className="single flex">
-              {single}
+              <span contentEditable onInput={(e) => handleEdit(e, index)}>
+                {single}
+              </span>
               <button
                 className="delete btn"
                 onClick={() => handleDelete(index)}
               >
-                <i class="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-trash"></i>
               </button>
             </li>
           );
