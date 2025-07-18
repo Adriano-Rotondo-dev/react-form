@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="container flex">
       <ul className="singlesList">
+        <h2>This is your to-listen list</h2>
         {singles.map((single, index) => {
           return (
             <li key={index} className="single flex">
@@ -32,7 +33,7 @@ function App() {
           onChange={(e) => setNewSingle(e.target.value)}
         />
         <button type="submit" className="btn flex">
-          Save the new Song
+          Save the next Ritual
           <img className="icon" src="/img/sp_logo.ico" alt="sp_logo" />
         </button>
       </form>
