@@ -1,29 +1,41 @@
-// import { useState } from "react";
+import { useState } from "react";
 
-const singles = [
-  "Even in Arcadia",
-  "Chokehold",
-  "Granite",
-  "Gethsemane",
-  "The Summoning",
-  "Euclid",
-];
+import singles_list from "./data/articles";
 
 function App() {
+  const [newSingle, setNewSingle] = useState("");
+  const [singles, setSingles] = useState(singles_list);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(newSingle);
+    setSingles([newSingle, ...singles]);
+  }
   return (
-    <div className="container">
+    <div className="container flex">
       <ul className="singlesList">
         {singles.map((single, index) => {
           return (
-            <li key={index} className="single">
+            <li key={index} className="single flex">
               {single}
+              <img className="icon" src="/img/sp_logo.ico" alt="sp_logo" />
             </li>
           );
         })}
       </ul>
-
-      {/* Aggiungiamo in pagina un semplice form con un campo input in cui inserire il titolo di un nuovo articolo del blog.
- Al submit del form, mostrare la lista degli articoli aggiornati. */}
+      <form onSubmit={handleSubmit} className="form flex">
+        <input
+          className="input"
+          placeholder="Insert New Single"
+          type="text"
+          value={newSingle}
+          onChange={(e) => setNewSingle(e.target.value)}
+        />
+        <button type="submit" className="btn flex">
+          Save the new Song
+          <img className="icon" src="/img/sp_logo.ico" alt="sp_logo" />
+        </button>
+      </form>
     </div>
   );
 }

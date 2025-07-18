@@ -8,3 +8,40 @@
 * {
   font-family: sans-serif;
 }
+
+.flex {
+  display: flex;
+}
+
+.form {
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.singlesList {
+  border: 5px solid grey;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+.single {
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid grey;
+}
+
+.icon {
+  max-width: 50%;
+}
