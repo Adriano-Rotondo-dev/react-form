@@ -8,8 +8,10 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(newSingle);
     setSingles([newSingle, ...singles]);
+  }
+  function handleDelete(singleToRemove) {
+    setSingles(singles.filter((single, index) => index !== singleToRemove));
   }
   return (
     <div className="container flex">
@@ -20,6 +22,12 @@ function App() {
             <li key={index} className="single flex">
               {single}
               <img className="icon" src="/img/sp_logo.ico" alt="sp_logo" />
+              <button
+                className="delete btn"
+                onClick={() => handleDelete(index)}
+              >
+                Delete
+              </button>
             </li>
           );
         })}
