@@ -13,7 +13,7 @@ function App() {
   function handleEdit(e, index) {
     const updatedSingles = [...singles];
     updatedSingles[index] = e.target.innerText;
-    setSingles(updatedSingles);
+    setSingles(updatedSingles); //Correzione con Fabio: ContentEditable è inutilmente COMPLICATO, inserire un input nell'elemento
   }
   function handleDelete(singleToRemove) {
     setSingles(singles.filter((single, index) => index !== singleToRemove));
